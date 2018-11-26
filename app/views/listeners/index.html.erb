@@ -1,0 +1,19 @@
+<h1>Listing Listeners</h1>
+
+<%= link_to 'New Listener', new_listener_path %>
+
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Interval</th>
+        <th></th>
+    </tr>
+
+    <% @listeners.each do |listener| %>
+        <tr>
+            <td><%= listener.title %></td>
+            <td><%= listener.interval %></td>
+            <td><%= link_to 'Show', listener_path(listener) %></td>
+        </tr>
+    <% end %>
+</table>
