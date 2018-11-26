@@ -8,13 +8,17 @@ class ListenersController < ApplicationController
     end
 
     def new
+        @listener = Listener.new
     end
 
     def create
         @listener = Listener.new(listener_params)
 
-        @listener.save
-        redirect_to @listener
+        if @listener.save
+            redirect_to @listener
+        else
+            render 'new'
+        end
     end
 
     private
