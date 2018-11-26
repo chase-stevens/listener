@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class SnitchesControllerTest < ActionDispatch::IntegrationTest
+class ListenersControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

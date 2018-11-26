@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'welcome/index'
 
-  resources :snitches
+  resources :listeners
   
   root 'welcome#index'
 end
