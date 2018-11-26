@@ -1,0 +1,23 @@
+<h1>New Snitch</h1>
+<%= form_with scope: :snitch, local: true do |form| %>
+    <p>
+        <%= form.label :title %><br>
+        <%= form.text_field :title%>
+    </p>
+
+    <p>
+        <%= form.label :interval %><br>
+        <%= radio_button_tag(:interval, "hourly") %>
+        <%= label_tag(:interval_hourly, "Hourly") %><br>
+        <%= radio_button_tag(:interval, "daily") %>
+        <%= label_tag(:interval_daily, "Daily") %><br>
+        <%= radio_button_tag(:interval, "weekly") %>
+        <%= label_tag(:interval_weekly, "Weekly") %><br>
+        <%= radio_button_tag(:interval, "monthly") %>
+        <%= label_tag(:interval_monthly, "Monthly") %><br>
+    </p>
+
+    <p>
+        <%= form.submit %>
+    </p>
+<% end %>
