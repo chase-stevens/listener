@@ -7,14 +7,14 @@
 
     <p>
         <%= form.label :interval %><br>
-        <%= radio_button_tag(:interval, "hourly") %>
-        <%= label_tag(:interval_hourly, "Hourly") %><br>
-        <%= radio_button_tag(:interval, "daily") %>
-        <%= label_tag(:interval_daily, "Daily") %><br>
-        <%= radio_button_tag(:interval, "weekly") %>
-        <%= label_tag(:interval_weekly, "Weekly") %><br>
-        <%= radio_button_tag(:interval, "monthly") %>
-        <%= label_tag(:interval_monthly, "Monthly") %><br>
+        <%= form.radio_button :interval, "hourly" %>
+        <%= form.label :interval_hourly, "Hourly" %><br>
+        <%= form.radio_button :interval, "daily" %>
+        <%= form.label :interval_daily, "Daily" %><br>
+        <%= form.radio_button :interval, "weekly" %>
+        <%= form.label :interval_weekly, "Weekly" %><br>
+        <%= form.radio_button :interval, "monthly" %>
+        <%= form.label :interval_monthly, "Monthly" %><br>
     </p>
 
     <p>
