@@ -15,6 +15,9 @@
             <td><%= listener.interval %></td>
             <td><%= link_to 'Show', listener_path(listener) %></td>
             <td><%= link_to 'Edit', edit_listener_path(listener)%></td>
+            <td><%= link_to 'Delete', listener_path(listener),
+                    method: :delete,
+                    data: { confirm: 'Are you sure?' } %></td>
         </tr>
     <% end %>
 </table>

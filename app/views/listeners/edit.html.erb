@@ -1,40 +1,5 @@
 <h1>Edit listener</h1>
 
-<%= form_with(model: @listener, local: true) do |form| %>
+<%= render 'form' %>
 
-    <% if @listener.errors.any? %>
-        <div id="error_explanation">
-            <h2>
-                <%= pluralize(@listener.errors.count, "error") %>
-                prohibited this article from being saved:
-            </h2>
-            <ul>
-                <% @listener.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
-                <% end %>
-            </ul>
-        </div>
-    <% end %>
-
-    <p>
-        <%= form.label :title %><br>
-        <%= form.text_field :title%>
-    </p>
-
-    <p>
-        <%= form.label :interval %><br>
-        <%= form.radio_button :interval, "hourly" %>
-        <%= form.label :interval_hourly, "Hourly" %><br>
-        <%= form.radio_button :interval, "daily" %>
-        <%= form.label :interval_daily, "Daily" %><br>
-        <%= form.radio_button :interval, "weekly" %>
-        <%= form.label :interval_weekly, "Weekly" %><br>
-        <%= form.radio_button :interval, "monthly" %>
-        <%= form.label :interval_monthly, "Monthly" %><br>
-    </p>
-
-    <p>
-        <%= form.submit %>
-    </p>
-<% end %>
 <%= link_to 'Back', listeners_path %>
