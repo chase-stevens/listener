@@ -1,3 +1,5 @@
+require 'securerandom'
+
 class ListenersController < ApplicationController
     def index
         @listeners = Listener.all
@@ -17,6 +19,7 @@ class ListenersController < ApplicationController
 
     def create
         @listener = Listener.new(listener_params)
+        @listener.uuid = SecureRandom.uuid
 
         if @listener.save
             redirect_to @listener
@@ -44,6 +47,6 @@ class ListenersController < ApplicationController
 
     private
         def listener_params
-            params.require(:listener).permit(:title, :interval)
+            params.require(:listener).permit(:title, :interval, :notes)
         end
 end

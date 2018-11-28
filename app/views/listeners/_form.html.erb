@@ -16,7 +16,7 @@
 
     <p>
         <%= form.label :title %><br>
-        <%= form.text_field :title%>
+        <%= form.text_field :title %>
     </p>
 
     <p>
@@ -29,6 +29,11 @@
         <%= form.label :interval_weekly, "Weekly" %><br>
         <%= form.radio_button :interval, "monthly" %>
         <%= form.label :interval_monthly, "Monthly" %><br>
+    </p>
+
+    <p>
+        <%= form.label :notes %><br>
+        <%= form.text_area :notes %>
     </p>
 
     <p>
