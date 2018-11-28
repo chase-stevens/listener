@@ -20,6 +20,7 @@ class ListenersController < ApplicationController
     def create
         @listener = Listener.new(listener_params)
         @listener.uuid = SecureRandom.uuid
+        @listener.url = "https://www.chaseslisteners.com/#{SecureRandom.hex}"
 
         if @listener.save
             redirect_to @listener
