@@ -1,6 +1,7 @@
 <p>
     <strong>Title</strong>
     <%= @listener.title %>
+    <span><%= @listener.isVerified ? "Verified" : "Not Verified" %></span>
 </p>
 
 <p>
@@ -16,6 +17,11 @@
 <p>
     <strong>Interval</strong>
     <%= @listener.interval %>
+</p>
+
+<p>
+    <strong>Checked In?</strong>
+    <%= @listener.isCheckedIn %>
 </p>
 
 <p>

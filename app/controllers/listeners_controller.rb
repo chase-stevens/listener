@@ -21,6 +21,8 @@ class ListenersController < ApplicationController
         @listener = Listener.new(listener_params)
         @listener.uuid = SecureRandom.uuid
         @listener.url = "https://www.chaseslisteners.com/#{SecureRandom.hex}"
+        @listener.isCheckedIn = false
+        @listener.isVerified = false
 
         if @listener.save
             redirect_to @listener
