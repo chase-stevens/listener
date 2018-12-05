@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_29_063318) do
+ActiveRecord::Schema.define(version: 2018_12_05_162221) do
+
+  create_table "checkins", force: :cascade do |t|
+    t.text "note"
+    t.integer "listener_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["listener_id"], name: "index_checkins_on_listener_id"
+  end
 
   create_table "listeners", force: :cascade do |t|
     t.string "title"

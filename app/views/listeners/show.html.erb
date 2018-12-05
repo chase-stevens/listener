@@ -1,8 +1,7 @@
-<p>
-    <strong>Title</strong>
-    <%= @listener.title %>
-    <span><%= @listener.isVerified ? "Verified" : "Not Verified" %></span>
-</p>
+
+<h1><%= @listener.title %></h1>
+
+<%= !@listener.isVerified ? "Not Verified" : "" %>
 
 <p>
     <strong>URL</strong>
@@ -28,6 +27,33 @@
     <strong>Notes</strong>
     <%= @listener.notes %>
 </p>
+
+<h2>Checkins</h2>
+<% @listener.checkins.each do |checkin| %>
+    <p>
+        <strong>Checkin Time</strong>
+        <%= checkin.created_at %>
+    </p>
+
+    <% if checkin.note != "" %>
+    <p>
+        &emsp;<strong>Note</strong>
+        <%= checkin.note %>
+    </p>
+    <% end %>
+<% end %>
+
+<h2>Add a checkin:</h2>
+<%= form_with(model: [ @listener, @listener.checkins.build ],
+local: true) do |form| %>
+    <p>
+        <%= form.label :note %><br>
+        <%= form.text_area :note %>
+    </p>
+    <p>
+        <%= form.submit %>
+    </p>
+<% end %>
 
 <%= link_to 'Edit', edit_listener_path(@listener) %>
 <%= link_to 'Back', listeners_path %>
