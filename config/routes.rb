@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
-  get 'users/new'
+  root 'welcome#index'
+
+  get  '/signup',  to: 'users#new'
+  post '/signup', to: 'users#create'
   get 'welcome/index'
 
   resources :listeners do
     resources :checkins
   end
 
-  root 'welcome#index'
+  resources :users
 end
