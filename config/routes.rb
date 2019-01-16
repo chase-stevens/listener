@@ -6,9 +6,12 @@ Rails.application.routes.draw do
   post    '/login',   to: 'sessions#create'
   delete  '/logout',  to: 'sessions#destroy'
 
+
   resources :listeners do
     resources :checkins
   end
+
+  get     '/:uuid', to: 'listeners#check_in'
 
   resources :users
 end

@@ -48,6 +48,13 @@ class ListenersController < ApplicationController
         redirect_to listeners_path
     end
 
+    def check_in
+      @listener = Listener.find_by uuid: params[:uuid]
+      @listener.isCheckedIn = true
+      @listener.save
+      redirect_to @listener
+    end
+
     private
         def listener_params
             params.require(:listener).permit(:title, :interval, :notes)
